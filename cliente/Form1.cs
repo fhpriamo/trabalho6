@@ -20,8 +20,9 @@ namespace trabalho6
         public Form1()
         {
             InitializeComponent();
-            txtIp.Text = Dns.GetHostName();
-            txtIp.Enabled = false;
+            txtHostName.Text = Dns.GetHostName();
+            btnEnviar.Enabled = false;
+            txtPorta.Text = "7474";
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -36,13 +37,21 @@ namespace trabalho6
 
         private void btnConectar_Click(object sender, EventArgs e)
         {
-            string ip = txtIp.Text;
+            status.Text = "Conectando...";
+            string ip = txtHostName.Text;
             int porta = Convert.ToInt32(txtPorta.Text);
             
             cliente = new Cliente(ip, porta, new comum.Console(txtResposta));
             cliente.Conectar();
-         
+
+            btnConectar.Enabled = false;
+            txtHostName.Enabled = false;
+            txtPorta.Enabled = false;
+            btnEnviar.Enabled = true;
             
+
+            status.Text = $"Conectado a {ip} pela porta {porta}";
+         
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,7 +59,23 @@ namespace trabalho6
             if (cliente == null)
                 return;
 
-            cliente.Enviar("Mensagem para você.");
+            cliente.Enviar(UnidadeEscolhida());
+        }
+
+        private string UnidadeEscolhida()
+        {
+            if (radioFahrenheit.Checked)
+            {
+                return "FAHRENHEIT";
+            }
+            else if (radioKelvin.Checked)
+            {
+                return "KELVIN";
+            }
+            else
+            {
+                return "CELSIUS";
+            }
         }
     }
 }

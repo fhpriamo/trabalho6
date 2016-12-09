@@ -32,13 +32,13 @@
             this.radioKelvin = new System.Windows.Forms.RadioButton();
             this.radioFahrenheit = new System.Windows.Forms.RadioButton();
             this.radioCelsius = new System.Windows.Forms.RadioButton();
-            this.txtIp = new System.Windows.Forms.TextBox();
+            this.txtHostName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPorta = new System.Windows.Forms.TextBox();
             this.txtResposta = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEnviar = new System.Windows.Forms.Button();
             this.btnConectar = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.status = new System.Windows.Forms.ToolStripStatusLabel();
@@ -90,22 +90,22 @@
             this.radioCelsius.Text = "Celsius";
             this.radioCelsius.UseVisualStyleBackColor = true;
             // 
-            // txtIp
+            // txtHostName
             // 
-            this.txtIp.Location = new System.Drawing.Point(12, 105);
-            this.txtIp.Name = "txtIp";
-            this.txtIp.Size = new System.Drawing.Size(126, 20);
-            this.txtIp.TabIndex = 2;
-            this.txtIp.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtHostName.Location = new System.Drawing.Point(12, 105);
+            this.txtHostName.Name = "txtHostName";
+            this.txtHostName.Size = new System.Drawing.Size(126, 20);
+            this.txtHostName.TabIndex = 2;
+            this.txtHostName.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "IP do servidor:";
+            this.label1.Text = "Nome do Host:";
             // 
             // label2
             // 
@@ -141,15 +141,15 @@
             this.label3.Text = "Resposta:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // button1
+            // btnEnviar
             // 
-            this.button1.Location = new System.Drawing.Point(190, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Enviar requisição";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEnviar.Location = new System.Drawing.Point(190, 261);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(100, 23);
+            this.btnEnviar.TabIndex = 9;
+            this.btnEnviar.Text = "Enviar requisição";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnConectar
             // 
@@ -191,13 +191,13 @@
             this.ClientSize = new System.Drawing.Size(303, 320);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnConectar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtResposta);
             this.Controls.Add(this.txtPorta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtIp);
+            this.Controls.Add(this.txtHostName);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Cliente";
@@ -216,13 +216,13 @@
         private System.Windows.Forms.RadioButton radioKelvin;
         private System.Windows.Forms.RadioButton radioFahrenheit;
         private System.Windows.Forms.RadioButton radioCelsius;
-        private System.Windows.Forms.TextBox txtIp;
+        private System.Windows.Forms.TextBox txtHostName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPorta;
         private System.Windows.Forms.TextBox txtResposta;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Button btnConectar;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel status;
