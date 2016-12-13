@@ -38,10 +38,20 @@ namespace trabalho6
 
         private void Servir()
         {
-            while (ClienteConectado)
+            while (socket.Connected)
             {
+                int numBytesRecebidos;
                 // lê a mensagem recebida
-                int numBytesRecebidos = socket.Receive(bufferIn);
+                try
+                {
+                    numBytesRecebidos = socket.Receive(bufferIn);
+                }
+                catch (SocketException ex)
+                {
+                    console.Escreve(ex.Message + socket.RemoteEndPoint.ToString());
+                    break;                    
+                }
+                
                 string mensagemRecebida = Encoding.ASCII.GetString(bufferIn, 0, numBytesRecebidos);
 
                 console.Escreve($"Mensagem recebida: {mensagemRecebida}");
