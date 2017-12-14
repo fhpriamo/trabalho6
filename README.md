@@ -1,2 +1,2 @@
 # trabalho6
-University project number 6
+University project n° 6
